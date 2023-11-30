@@ -43,7 +43,7 @@ task run (type: JavaExec, dependsOn: 'classes') {
     group = 'Jason'
     description 'runs the application'
     mainClass = 'jason.infra.local.RunLocalMAS'
-    args = ['mission-planner-ia.mas2j']
+    args = ['mission_planner_ia.mas2j']
 	// options:
 	//     args = ['mission-planner-ia.mas2j', '--debug', '--no-net', '--empty-mas']
 	//     args = ['mission-planner-ia.mas2j', '--log-conf', 'l.p'] // to use file l.p to configure logging
