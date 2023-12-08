@@ -1,6 +1,7 @@
 MAS mission_planner_ia {
 
     agents: alice;
+            base;
 
     aslSourcePath: "src/agt";
 }

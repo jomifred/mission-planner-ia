@@ -2,13 +2,16 @@
 
 battery_power(1000). // should be perceived, here it is a beliefs just to illustrate
 
-!start.
+!mission(0).         // initial default mission
++!mission(0) <- .print("wandering...."); .wait(1000); !mission(0).
 
-+!start
-   <- .print("Loading mission...");
-      mp.load_mission_plan(1,"plan2.waypoints",Plan); // produce the plan from a mission planner file
++!new_mission(Id,Mission)
+   <-  .drop_intention( mission(Old) );               // drop my current mission
+       .print("Dropped mission ",Old);
+       mp.create_plan_for_mission(Id,Mission,Plan);   // the jason plan for the mission
+      .print("Mission as Jason plan: ",Plan);
       .add_plan(Plan); // add the plan in plan library
-      !mission(1); // executes the plan
+      !mission(Id); // executes the plan
       .print("** mission accomplished **");
       .stopMAS;
    .

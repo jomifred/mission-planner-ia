@@ -23,6 +23,7 @@ mission_required_energy([cmd(Cmd,Args)|T],X) :-
     : mav_link_cmd(Cmd,CmdName)
    <- //.print("executing ", Name, " with ",Args);
       -+current_action(MissionId,CmdName,Args);
+      .wait(2000);
       // TODO: implement the real execution of the command
    .
 
